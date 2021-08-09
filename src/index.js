@@ -1,1 +1,3 @@
-console.log("hola")
+import {sayHello} from "./hello";
+
+console.log(sayHello("Mehmet"));
