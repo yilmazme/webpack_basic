@@ -1,5 +1,6 @@
 const htmlwebpackplugin = require("html-webpack-plugin");
 const path = require("path");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const mode = process.env.NODE_ENV === "production"? "production" : "development";
 
@@ -39,5 +40,8 @@ module.exports={
             filename: "./index.html",
         })
     ],
+    optimization: {
+        minimizer: [new UglifyJsPlugin()],
+      },
     
 }
